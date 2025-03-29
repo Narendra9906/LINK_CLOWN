@@ -15,19 +15,6 @@ app.use("/", userRoute)
 
 app.use("/api", apiRoute)
 
-app.post("/itenary", (req,res) => {
-    const itineraryData = req.body;
-    
-    // Log the incoming data
-    console.log("Received itinerary data:", itineraryData);
-    
-    // Send a response back to the client
-    res.json({
-      message: "Itinerary successfully created!",
-      data: itineraryData
-    });
-})
-
 
 app.listen(3000,() => {
     console.log("listening port 3000")
