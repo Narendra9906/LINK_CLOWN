@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux'
+import { toggle } from '../redux/slice/toggler'
 
 const App = () => {
+    const isloggedin = useSelector((state) => state.toggle) // Fix here
+    const dispatch = useDispatch()
+
     const [isRegistering, setIsRegistering] = useState(true);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -41,7 +46,8 @@ const App = () => {
             setPhoneNumber('');
 
             if(response.status === 201 || response.status === 200){
-              navigate('/');
+                dispatch(toggle());
+                navigate('/');
             }
         } catch (error) {
             console.error('Error:', error.response ? error.response.data : error.message);
@@ -67,6 +73,10 @@ const App = () => {
 
         try {
             const response = await axios.post('http://localhost:3000/login', data);
+            if(response.status === 201 || response.status === 200){
+                dispatch(toggle());
+                navigate('/');
+            }
             console.log('Login Response:', response.data);
             setError('');
             setEmail('');
