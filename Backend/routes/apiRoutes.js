@@ -30,4 +30,8 @@ router.get("/news", async(req,res) => {
     res.send(NewsResponse)
 })
 
+router.get("/whatsapp",async(req,res) => {
+    await sendMessage('+919458016708', 'Hello')
+})
+
 export default router;

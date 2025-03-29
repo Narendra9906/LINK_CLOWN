@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Navbar } from './components'
 import { Routes,Route } from 'react-router-dom'
-import { Home,Advisory,Itenary,Profile} from './Pages'
+import { Home,Advisory,Itenary,Profile} from './pages'
 
 
 function App() {
