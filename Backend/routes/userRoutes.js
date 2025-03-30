@@ -1,24 +1,13 @@
 import express from "express";
 import authController from "../controllers/authController.js"; 
-import responseGenerator from "../utils/responseGenerator.js";
+import {responseGenerator1, responseGenerator2} from "../utils/responseGenerator.js";
 const router = express.Router();
 
 router.post("/register", authController.register);
 router.post("/login", authController.login);
 
-router.post("/itenary", (req,res) => {
-    const itineraryData = req.body;
+router.post("/itenary", responseGenerator2)
 
-    // Log the incoming data
-    console.log("Received itinerary data:", itineraryData);
-
-    // Send a response back to the client
-    res.json({
-      message: "Itinerary successfully created!",
-      data: itineraryData
-    });
-})
-
-router.post("/chat", responseGenerator)
+router.post("/chat", responseGenerator1)
 
 export default router;

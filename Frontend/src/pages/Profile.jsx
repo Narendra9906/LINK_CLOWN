@@ -90,56 +90,60 @@ const App = () => {
     };
 
     return (
-        <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
-            <h2>{isRegistering ? 'Register' : 'Login'}</h2>
+        <div  style={{ maxWidth: '400px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', marginTop: '100px', marginBottom: '50px'}}>
+            <h2 className='font-semibold text-xl text-center text-gray-800 mb-4'>
+                {isRegistering ? 'Register' : 'Login'}
+            </h2>
             {error && <p style={{ color: 'red' }}>{error}</p>}
 
             <form onSubmit={isRegistering ? handleRegisterSubmit : handleLoginSubmit}>
                 {isRegistering && (
-                    <div style={{ marginBottom: '15px' }}>
-                        <label htmlFor="name">Name:</label>
+                    <div className='mb-4 flex items-center'>
+                        <label htmlFor="name" className='text-sm font-medium text-gray-700 mr-2 w-32'>Name:</label>
                         <input
                             type="text"
                             id="name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
-                            style={{ width: '100%', padding: '8px', marginTop: '5px' }}
+                            className='px-3 py-1 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full'
                         />
                     </div>
                 )}
-                <div style={{ marginBottom: '15px' }}>
-                    <label htmlFor="email">Email:</label>
+                <div className='mb-4 flex items-center'>
+                    <label htmlFor="email" className='text-sm font-medium text-gray-700 mr-2 w-32'>Email:</label>
                     <input
                         type="email"
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        style={{ width: '100%', padding: '8px', marginTop: '5px' }}
+                        className='px-3 py-1 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full'
                     />
                 </div>
-                <div style={{ marginBottom: '15px' }}>
-                    <label htmlFor="password">Password:</label>
+                <div className='mb-4 flex items-center'>
+                    <label htmlFor="password" className='text-sm font-medium text-gray-700 mr-2 w-32'>Password:</label>
                     <input
                         type="password"
                         id="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        style={{ width: '100%', padding: '8px', marginTop: '5px' }}
+                        className='px-3 py-1 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full'
                     />
                 </div>
                 {isRegistering && (
-                    <div style={{ marginBottom: '15px' }}>
-                        <label htmlFor="phoneNumber">Phone Number:</label>
+                    <div className='mb-4 flex items-center'>
+                        <label htmlFor="phoneNumber" className='text-sm font-medium text-gray-700 mr-2 w-32'>Phone Number:</label>
                         <input
                             type="tel"
                             id="phoneNumber"
                             value={phoneNumber}
                             onChange={(e) => setPhoneNumber(e.target.value)}
                             required
-                            style={{ width: '100%', padding: '8px', marginTop: '5px' }}
+                            className='px-3 py-1 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full'
+                            placeholder="1234567890"
+                            title="Format: 123-456-7890"
                         />
                     </div>
                 )}
@@ -164,16 +168,16 @@ const App = () => {
 
             <p style={{ textAlign: 'center', marginTop: '20px' }}>
                 {isRegistering ? (
-                    <span>
+                    <span className='text-sm text-gray-600 flex items-center justify-center'>
                         Already have an account?{' '}
-                        <button onClick={toggleForm} style={{ background: 'none', border: 'none', color: '#007BFF', cursor: 'pointer' }}>
+                        <button onClick={toggleForm} className='ml-1' style={{ background: 'none', border: 'none', color: '#007BFF', cursor: 'pointer' }}>
                             Login here
                         </button>
                     </span>
                 ) : (
-                    <span>
+                    <span className='text-sm text-gray-600 flex items-center justify-center'>
                         Don't have an account?{' '}
-                        <button onClick={toggleForm} style={{ background: 'none', border: 'none', color: '#007BFF', cursor: 'pointer' }}>
+                        <button onClick={toggleForm} className='ml-1 ' style={{ background: 'none', border: 'none', color: '#007BFF', cursor: 'pointer' }}>
                             Register here
                         </button>
                     </span>

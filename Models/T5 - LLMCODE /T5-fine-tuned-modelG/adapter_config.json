@@ -5,7 +5,7 @@
   "fan_in_fan_out": false,
   "inference_mode": true,
   "lora_alpha": 32,
-  "lora_dropout": 0.05,
+  "lora_dropout": 0.1,
   "merge_weights": false,
   "modules_to_save": null,
   "peft_type": "LORA",
