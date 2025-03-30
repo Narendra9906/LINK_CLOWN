@@ -1,27 +1,32 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 const Advisory = () => {
   const [desire, setDesire] = useState('');
   const [display, setDisplay] = useState('none');
   const [messages, setMessages] = useState([]);  
-  
+  const [isLoading,setIsLoading] = useState(false)
+
   const handleChat = async (e) => {
+    setIsLoading(true)
     e.preventDefault(); 
 
     setMessages((prevMessages) => [
       { text: desire, sender: 'user' },...prevMessages
     ]);
-
-    const response = axios.post('http://localhost:3000/chat', { data: desire });
+    
+    const response = await axios.post('http://localhost:3000/chat', { data: desire });
 
     const summResponse = (await response).data
+    
     
     setMessages((prevMessages) => [
       { text: summResponse, sender: 'server' },...prevMessages,
     ]);
 
     setDesire('');
+    
+    setIsLoading(false)
   };
 
   return (
@@ -53,6 +58,7 @@ const Advisory = () => {
               borderRadius: '10px',
               margin: '5px 0',
               maxWidth: '80%',
+              fontSize: '10px'
             }}>
               {message.text}
             </div>
@@ -75,6 +81,7 @@ const Advisory = () => {
           />
           <button
             type="submit"
+            disabled={isLoading}
             style={{
               padding: '10px 15px',
               backgroundColor: '#4CAF50',

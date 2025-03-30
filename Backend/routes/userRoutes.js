@@ -1,5 +1,6 @@
 import express from "express";
 import authController from "../controllers/authController.js"; 
+import responseGenerator from "../utils/responseGenerator.js";
 const router = express.Router();
 
 router.post("/register", authController.register);
@@ -18,8 +19,6 @@ router.post("/itenary", (req,res) => {
     });
 })
 
-router.post("/chat",(req,res) => {
-    res.json("Haan");
-})
+router.post("/chat", responseGenerator)
 
 export default router;

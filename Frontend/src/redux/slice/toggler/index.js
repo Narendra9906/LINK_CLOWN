@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const isLoggedinSlice = createSlice({
-    initialState: 0,
+    initialState: 1,
     name: "isLoggedin",
     reducers: {
         toggle: (state) => !state,
