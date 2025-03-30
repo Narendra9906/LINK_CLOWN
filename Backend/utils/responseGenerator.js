@@ -9,7 +9,8 @@ const responseGenerator1 = async (req, res) => {
   try {
     const val = req.body;
     const result = await model.generateContent(val['data'] + " Keep the answer very specific and to the point. DO NOT USE *");
-    const responseText = await result.response.text(); // Corrected response parsing
+    const responseData = result.response;
+    const responseText = responseData.candidates[0].content.parts[0].text; // Corrected response parsing
     res.send(responseText);
   } catch (error) {
     console.error("Error in responseGenerator1:", error);
@@ -24,10 +25,10 @@ const responseGenerator2 = async (req, res) => {
     const prompt = `
         ${JSON.stringify(val, null, 2)}
       1) Keep the answer very specific and to the point.
-      2) DO NOT USE *.
+      2) REMOVE *(stars) IN YOUR TEXT GENERATION.
       3) Based on the data given, provide:
         - [LOCATION TO VISIT IN PLACE HE IS GOING (toWhere)].
-        - Based on his budget (budgetConstraint) and trip type (solo, friends, family), provide the best accommodation details based on his/her (accommodationType).
+        - Based on his budget (budgetConstraint) and trip type (solo, friends, family), provide the best accommodation details based on his/her (accommodationType)[GIVE NAME OF HOTELS].
     `;
     console.log(prompt);
     const result = await model.generateContent(prompt);

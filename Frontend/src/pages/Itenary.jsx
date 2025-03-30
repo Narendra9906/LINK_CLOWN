@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
+
 const Itinerary = () => {
   const [fromWhere, setFromWhere] = useState('')
   const [toWhere, setToWhere] = useState('')
@@ -28,7 +29,7 @@ const Itinerary = () => {
     )
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault()
 
     if (!isFormValid()) {
@@ -48,13 +49,16 @@ const Itinerary = () => {
     }
 
     console.log('Data:', data)
+    
+    const response = await axios.post("http://localhost:3000/itenary", data);
+    
+    console.log("Full Response:", response);       // Logs full response
+    console.log("Extracted Data:", response.data); // Logs only data
     {
       setDisplayForm('none')
       setDisplayitenary('block')
     }
-    const response = axios.post('http://localhost:3000/itenary', data);
-    console.log(`response:`, response.data.data)
-    setResult(response);
+    setResult(response.data); // Store the
   }
 
   return (
@@ -238,17 +242,21 @@ const Itinerary = () => {
           </div>
         </form>
       </div>
-      <div style={{ display: displayitenary }}>
-        {/* {result.} */}
-        RESPONSE IS AVAILABLE IN YOUR CONSOLE CHECK IT
-        <button style={{borderStyle:'solid'}} onClick={() => {
-          setDisplayForm('block')
-          setDisplayitenary('none')
-        }}>Edit Itenary
+      <div className="flex flex-col items-center justify-center space-y-4">
+        <div className={`w-full max-w-lg p-4 border rounded-lg shadow ${displayitenary === 'none' ? 'hidden' : 'block'}`}>
+          <p className="text-lg font-semibold text-gray-800">{result}</p>
+        </div>
+
+        <button
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+          onClick={() => {
+            setDisplayForm('block');
+            setDisplayitenary('none');
+          }}
+        >
+          Edit Itinerary
         </button>
-        <br />
       </div>
-      
     </div>
   )
 }

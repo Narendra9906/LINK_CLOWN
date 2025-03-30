@@ -43,7 +43,7 @@ const Home = () => {
 
 
             {/* Features Overview */}
-            <div className="pt-10 h-[800px] w-full bg-cyan-200 flex-col justify-center items-centre">
+            <div className="pt-10 h-[800px] w-full flex-col justify-center items-centre">
                 <div className='relative text-171A1F' style={{ textAlign: 'center' }}>
                     <h1 className='text-3xl font-bold'>Features Overview</h1>
                     <br />
@@ -63,7 +63,7 @@ const Home = () => {
             </div>
 
             {/* Feedback Section */}
-            <div className='pt-10 h-[400px] w-full bg-emerald-200 flex flex-col justify-center items-center'>
+            <div className='pt-10 h-[400px] w-full  flex flex-col justify-center items-center'>
                 <h3 className='text-3xl font-bold mb-8'>Hear from our awesome users!</h3>
                 <div className='w-3/4 flex justify-center items-center'>
                     <div className='flex overflow-x-auto space-x-8 scrollbar-hide'>
@@ -78,7 +78,7 @@ const Home = () => {
 
 
             {/* Plan Your Journey Section */}
-            <div className='py-40 h-[400px] flex-col justify-center items-center bg-fuchsia-200' style={{ textAlign: 'center'}}>
+            <div className='py-40 h-[400px] flex-col justify-center items-center ' style={{ textAlign: 'center'}}>
                 <h1 className='text-3xl font-bold '>Plan Your Journey</h1>
                 <p>Start your adventure today by planning the trip of your dreams effortlessly.</p>
                 <a href='#'><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-2 rounded'>Start Planning</button></a>
