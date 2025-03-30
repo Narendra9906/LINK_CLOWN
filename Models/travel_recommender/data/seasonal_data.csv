@@ -1,0 +1,7 @@
+destination_id,month,popularity_score,avg_price,weather_condition,special_events
+101,1,7.5,3000,moderate,New Year Festival
+101,2,8.0,3200,moderate,
+101,6,5.5,2800,hot,
+102,1,9.5,2000,moderate,Spiritual Gathering
+102,6,6.5,1600,hot,
+102,11,8.5,2200,cool,Diwali Festival

@@ -1,0 +1,6 @@
+user_id,user_type,age_group,preferred_accommodation,travel_frequency,signup_date
+1001,student,18-24,hostel,frequent,2023-01-15
+1002,professional,25-34,hotel,moderate,2023-02-20
+1003,professional,35-44,hotel,occasional,2023-03-05
+1004,student,18-24,hostel,frequent,2023-04-10
+1005,professional,45-54,hotel,moderate,2023-05-15

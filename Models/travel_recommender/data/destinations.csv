@@ -1,0 +1,6 @@
+destination_id,country,state,place_name,place_type,category,popularity_score,avg_cost_per_day
+101,India,Rajasthan,Jaipur,historical,culture,8.5,2500
+102,India,Uttar Pradesh,Varanasi,religious,spiritual,9.0,1800
+103,Thailand,Bangkok,Grand Palace,historical,culture,8.8,3500
+104,Italy,Rome,Vatican City,religious,spiritual,9.5,5000
+105,India,Tamil Nadu,Madurai,religious,spiritual,7.5,2000

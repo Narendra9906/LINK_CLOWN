@@ -1,0 +1,6 @@
+destination_id,historical_significance,religious_importance,cultural_value,nature_beauty,adventure_options,family_friendly,budget_friendly,luxury_options
+101,0.9,0.3,0.8,0.5,0.6,0.7,0.6,0.7
+102,0.7,0.95,0.9,0.4,0.2,0.6,0.8,0.4
+103,0.8,0.2,0.7,0.3,0.5,0.8,0.4,0.8
+104,0.9,0.99,0.95,0.2,0.1,0.7,0.3,0.9
+105,0.6,0.9,0.8,0.3,0.2,0.7,0.7,0.5

@@ -1,0 +1,6 @@
+accommodation_id,destination_id,name,type,rating,price_per_night,amenities
+201,101,Hotel Jaipur Palace,hotel,4.2,3500,wifi|pool|restaurant
+202,101,Jaipur Backpackers,hostel,3.8,800,wifi|shared_kitchen
+203,102,Ganges View Hotel,hotel,4.0,2500,wifi|restaurant
+204,102,Varanasi Hostel,hostel,3.5,600,wifi|shared_kitchen
+205,103,Bangkok Luxury Inn,hotel,4.5,4500,wifi|pool|spa|restaurant
